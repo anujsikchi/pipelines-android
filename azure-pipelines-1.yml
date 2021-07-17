@@ -7,7 +7,11 @@ trigger:
 - master
 
 pool:
-  vmImage: ubuntu-latest
+  vmImage: macos-latest
+  
+- task: AndroidSigning@3
+  inputs:
+    apkFiles: '**/*.apk'
 
 steps:
 - task: Gradle@2
